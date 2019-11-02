@@ -16,7 +16,7 @@ public void MapName(char[] prefix, char[] buf, int buflen){
 public void ServerName(char[] buf,int buflen){
     new String:sname[SNAME_LEN];
     ConVar servername = FindConVar("hostname");
-    servername.GetString("sname",SNAME_LEN);
+    servername.GetString(sname,SNAME_LEN);
     ReplaceString(sname,SNAME_LEN," ","");
     ReplaceString(sname,SNAME_LEN,"[","");
     ReplaceString(sname,SNAME_LEN,"]","");

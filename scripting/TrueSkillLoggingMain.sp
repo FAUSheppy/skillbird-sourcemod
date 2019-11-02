@@ -70,10 +70,13 @@ public APLRes:AskPluginLoad2(Handle:myself, bool:late, String:error[], err_max){
 
 public OnPluginStart(){
     
+    /* get and verify server name for output file */
     char server[SNAME_LEN];
     ServerName(server, sizeof(server));
     logfile = OpenFile(server,"at",false,NULL_STRING);
-   
+    if strlen(server) < 1:
+        return ThrowNativeError(SP_ERROR_NATIVE, "Computed Invalid Servername '%s'", server)
+
     /* inial line */
     LogToOpenFile(logfile,"0x42,start");
      
