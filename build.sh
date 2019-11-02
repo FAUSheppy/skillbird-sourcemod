@@ -22,9 +22,10 @@ cp scripting/include/* $plugin_dir/include/
 
 cp extensions/* $ext_dir/
 
+originDir=$(pwd)
 cd $plugin_dir
-
 ./compile.sh TrueSkillLoggingMain.sp TrueSkillQueryMain.sp
+cp compiled/TrueSkill* $originDir/
 
 # mv $sourcemod_addons_dir/sourcemod/scripting/TrueSkill* 
 # compiled/insurgency_query.smx compiled/ints_logging.smx ../plugins
