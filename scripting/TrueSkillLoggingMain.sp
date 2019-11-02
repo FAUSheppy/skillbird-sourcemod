@@ -20,7 +20,7 @@ public Action:Timer_MapStart(Handle:timer){
 public Action:Timer_RoundStart(Handle:timer){
     LogActiveClients(logfile, "0x42,round_start_active,");
     char map[SNAME_LEN];
-    MapName("0x42,mapname,",map, sizeof(map));
+    MapName("0x42,mapname,", map, sizeof(map));
     LogToOpenFile(logfile, map);
     return Plugin_Continue;
 }
@@ -42,26 +42,26 @@ public Action:Event_RoundEnd(Handle:event, const String:name[], bool:dontBroadca
 public Action:Event_PlayerDisconnect(Handle:event, const String:name[], bool:dontBroadcast){    
     LogClientEventFormat(logfile, event, "0x42,disconnect,");
     LogActiveClients(logfile, "0x42,dc,");
-	  return Plugin_Continue;
+	return Plugin_Continue;
 }
 
 public Action:Event_PlayerChangedTeam(Handle:event, const String:name[], bool:dontBroadcast){
     LogActiveClients(logfile, "0x42,tc,");
-    LogClientEventFormat(logfile, event,"0x42,teamchange,");
-	  return Plugin_Continue;
+    LogClientEventFormat(logfile, event, "0x42,teamchange,");
+	return Plugin_Continue;
 }
 
 public OnMapStart(){
-    CreateTimer(5.0,Timer_MapStart);
+    CreateTimer(5.0, Timer_MapStart);
 }
 
 /* ---------------------- Plugin ---------------------- */
 public Plugin:myinfo = {
-	name = "skillbird-query",
-	author = "FAUSheppy",
-	description = "Backend for trueskill rating system",
-	version = "2.0",
-	url = "https://github.com/FAUSheppy/skillbird-sourcemod"
+	name        = "skillbird-data-collection,
+	author      = "FAUSheppy",
+	description = "Module to collect data for the skillbird framework",
+	version     = "2.0",
+	url         = "https://github.com/FAUSheppy/skillbird-sourcemod"
 };
 
 public APLRes:AskPluginLoad2(Handle:myself, bool:late, String:error[], err_max){
@@ -73,12 +73,12 @@ public OnPluginStart(){
     /* get and verify server name for output file */
     char server[SNAME_LEN];
     ServerName(server, sizeof(server));
-    logfile = OpenFile(server,"at",false,NULL_STRING);
+    logfile = OpenFile(server, "at", false, NULL_STRING);
     if strlen(server) < 1:
         return ThrowNativeError(SP_ERROR_NATIVE, "Computed Invalid Servername '%s'", server)
 
     /* inial line */
-    LogToOpenFile(logfile,"0x42,start");
+    LogToOpenFile(logfile, "0x42,start");
      
     /* Hook Events */
 	HookEvent("round_end", Event_RoundEnd);	
@@ -87,6 +87,6 @@ public OnPluginStart(){
 }
 
 public OnPluginEnd(){
-    LogToOpenFile(logfile,"0x42,plugin unloaded");
+    LogToOpenFile(logfile, "0x42,plugin unloaded");
     CloseHandle(logfile);
 }

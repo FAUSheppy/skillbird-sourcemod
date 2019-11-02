@@ -38,11 +38,11 @@ public Action Timer_QueryTeam(Handle timer, int client){
 
 /* ---------------------- Plugin ---------------------- */
 public Plugin:myinfo = {
-	name = "TrueSkill Query Plugin",
-	author = "sheppy",
-	description = "Queries to RatingDB",
-	version = "2.0",
-	url = "atlantishq.hq"
+	name        = "skillbird-query",
+	author      = "FAUSheppy",
+	description = "Module for interaction with the skillbird API",
+	version     = "2.0",
+	url         = "https://github.com/FAUSheppy/skillbird-sourcemod"
 };
 
 public APLRes:AskPluginLoad2(Handle:myself, bool:late, String:error[], err_max){

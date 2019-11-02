@@ -4,7 +4,7 @@
 
 public void EventWinnerTeam(Handle:event, char[] prefix, char[] buf, int buflen){
     new team_id = GetEventInt(event, "winner");
-    Format(buf,buflen,"%s,%d",prefix,team_id);
+    Format(buf, buflen, "%s,%d", prefix, team_id);
 }
 
 public void MapName(char[] prefix, char[] buf, int buflen){
@@ -17,11 +17,11 @@ public void ServerName(char[] buf,int buflen){
     new String:sname[SNAME_LEN];
     ConVar servername = FindConVar("hostname");
     servername.GetString(sname,SNAME_LEN);
-    ReplaceString(sname,SNAME_LEN," ","");
-    ReplaceString(sname,SNAME_LEN,"[","");
-    ReplaceString(sname,SNAME_LEN,"]","");
-    ReplaceString(sname,SNAME_LEN,"(","");
-    ReplaceString(sname,SNAME_LEN,")","");
+    ReplaceString(sname, SNAME_LEN," ","");
+    ReplaceString(sname, SNAME_LEN,"[","");
+    ReplaceString(sname, SNAME_LEN,"]","");
+    ReplaceString(sname, SNAME_LEN,"(","");
+    ReplaceString(sname, SNAME_LEN,")","");
 }
 
 

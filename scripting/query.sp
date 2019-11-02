@@ -50,13 +50,13 @@ public CaseSwitchReceive(Handle:socketl, String:receiveData[], const dataSize, a
     SplitString(receiveData, INDEX_SEP, tag, TAG_LEN);
 
     if(StrEqual(tag, "BALANCE_SINGLE")){
-        RebuildTeams(INDEX_SEP,"|",receiveData);
+        RebuildTeams(INDEX_SEP, "|",receiveData);
     }else if(StrEqual(tag, "BALANCE_TEAMS")){
-        RebuildTeams(INDEX_SEP,"|",receiveData);
+        RebuildTeams(INDEX_SEP, "|",receiveData);
     }else if(StrEqual(tag, "RATING_SINGLE")){
         char ratingInfo[DEFAULT_LEN];
         SplitString(receiveData, INDEX_SEP, ratingInfo, DEFAULT_LEN);
-        PrintToChatAll("%s",receiveData);
+        PrintToChatAll("%s", receiveData);
     }
 }
 
@@ -92,7 +92,7 @@ public OnSocketConnected(Handle:socketl,any:arg) {
 }
 
 public OnSocketDisconnected(Handle:socketl,any:arg) {
-	CreateTimer(10.0,AttemptReconnectSocket,socketl,TIMER_REPEAT);
+	CreateTimer(10.0, AttemptReconnectSocket, socketl, TIMER_REPEAT);
 }
 
 public OnSocketError(Handle:socketl, const errorType, const errorNum,any:arg) {
