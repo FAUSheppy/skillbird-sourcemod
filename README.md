@@ -61,5 +61,7 @@ What I am personally doing is starting Insurgency with systemd and then:
 
     journalctl -fu insurgency.service > output.log
 
+Set sv\_logflush to 1 in the server.cfg to write out the information in shorter intervals, the performance impact is negligible.
+
 # Why include sm-socket as binaries?
 Because building Sourcemod extensions is annoying to do for the average user. I know it's not a perfect solution, but it's the best I could come up with. In compliance with the terms of the GPL (the license of Sourcemod), you may find the source code of those binaries [here](https://github.com/nefarius/sm-ext-socket).
