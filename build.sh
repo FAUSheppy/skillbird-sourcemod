@@ -26,9 +26,3 @@ originDir=$(pwd)
 cd $plugin_dir
 ./compile.sh TrueSkillLoggingMain.sp TrueSkillQueryMain.sp
 cp compiled/TrueSkill* $originDir/
-
-# mv $sourcemod_addons_dir/sourcemod/scripting/TrueSkill* 
-# compiled/insurgency_query.smx compiled/ints_logging.smx ../plugins
-
-# reload
-#insurgency_rcon sm plugins reload insurgency_query.smx && insurgency_small_rcon sm plugins reload insurgency_query.smx
