@@ -57,11 +57,11 @@ public OnMapStart(){
 
 /* ---------------------- Plugin ---------------------- */
 public Plugin:myinfo = {
-	name = "sheppy trueskill backend",
-	author = "sheppy",
+	name = "skillbird-query",
+	author = "FAUSheppy",
 	description = "Backend for trueskill rating system",
 	version = "2.0",
-	url = "atlantishq.hq"
+	url = "https://github.com/FAUSheppy/skillbird-sourcemod"
 };
 
 public APLRes:AskPluginLoad2(Handle:myself, bool:late, String:error[], err_max){
