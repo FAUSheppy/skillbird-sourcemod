@@ -78,9 +78,9 @@ public OnPluginStart(){
     LogToOpenFile(logfile,"0x42,start");
      
     /* Hook Events */
-	  HookEvent("round_end", Event_RoundEnd);	
-	  HookEvent("player_team", Event_PlayerChangedTeam);	
-	  HookEvent("player_disconnect", Event_PlayerDisconnect);	
+	HookEvent("round_end", Event_RoundEnd);	
+	HookEvent("player_team", Event_PlayerChangedTeam);	
+	HookEvent("player_disconnect", Event_PlayerDisconnect);	
 }
 
 public OnPluginEnd(){
