@@ -19,6 +19,9 @@ Start CMD and install the [Insurgency Server](https://developer.valvesoftware.co
 ## Compile Plugin
 Download and unpack [Sourcemod](http://www.sourcemod.net/downloads.php), after unpacking, there should be two directories, *addons* and *cfg*. Execute *build.sh* with the addons dir as argument.
 
+Download and unpack the extensions [json](https://github.com/FAUSheppy/sm-json) and and move all files into the *scriping/include/* directory.
+Download and upack the [system2](https://forums.alliedmods.net/showthread.php?t=146019), follow the instructions there to install it.
+
     ./build.sh /path/to/addons/dir/
 
 ## Add Sourcemod/Plugins to Insurgency Server

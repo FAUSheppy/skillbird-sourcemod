@@ -1,3 +1,6 @@
 *.swp
+include/
+.vscode
+sourcemod/
 *.bak
 *.smx
