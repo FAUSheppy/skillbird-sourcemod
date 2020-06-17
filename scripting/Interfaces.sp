@@ -45,7 +45,9 @@ public void SubmittEventActiveClients(){
 
         new String:clientId[DEFAULT_LEN];
         new String:clientName[SNAME_LEN];
-        GetClientAuthId(i, AuthId_SteamID64, clientId, DEFAULT_LEN, true);
+        if(!GetClientAuthId(i, AuthId_SteamID64, clientId, DEFAULT_LEN, true)){
+	    continue;
+	}
         GetClientName(i, clientName, SNAME_LEN);
         
         player.SetString("id", clientId);
