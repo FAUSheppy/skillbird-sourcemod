@@ -10,16 +10,16 @@
 
 public void PrintHttpResponse(bool success, const char[] error, System2HTTPRequest request, System2HTTPResponse response, HTTPRequestMethod method) {
     if (success) {
-	if(response.StatusCode == 204 || response.StatusCode == 200){
+        if(response.StatusCode == 204 || response.StatusCode == 200){
             char[] content = new char[response.ContentLength + 1];
             response.GetContent(content, response.ContentLength + 1);
             PrintToChatAll("%s", content);
-	}else if(response.StatusCode == 404){
+        }else if(response.StatusCode == 404){
             PrintToChatAll("skillbird:error:player_not_in_db");
-	}else{
+        }else{
             PrintToChatAll("skillbird:error:scheduled_downtime:database_backup");
-	}
-    } else {
+        }
+    }else{
         PrintToChatAll("skillbird:error: backend unavailiable");
     }
  }

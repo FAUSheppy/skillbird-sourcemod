@@ -13,28 +13,28 @@
 
 /* ---------------------- Plugin ---------------------- */
 public Plugin:myinfo = {
-	name        = "Skillbird",
-	author      = "FAUSheppy",
-	description = "Module to interact with the skillbird framework",
-	version     = "3.0",
-	url         = "https://github.com/FAUSheppy/skillbird-sourcemod"
+    name        = "Skillbird",
+    author      = "FAUSheppy",
+    description = "Module to interact with the skillbird framework",
+    version     = "3.0",
+    url         = "https://github.com/FAUSheppy/skillbird-sourcemod"
 };
 
 public APLRes:AskPluginLoad2(Handle:myself, bool:late, String:error[], err_max){
-	return APLRes_Success;
+    return APLRes_Success;
 }
 
 public OnPluginStart(){
 
     /* Hook Events */
-	HookEvent("round_end", Event_RoundEnd);	
-	HookEvent("player_team", Event_PlayerChangedTeam);	
-	HookEvent("player_disconnect", Event_PlayerDisconnect);	
+    HookEvent("round_end", Event_RoundEnd);    
+    HookEvent("player_team", Event_PlayerChangedTeam);    
+    HookEvent("player_disconnect", Event_PlayerDisconnect);    
 
     CreateConVar(VAR_SESSION_ID, "0", "Session in for this round");
     CreateConVar(VAR_TARGET_PORT, "6200", "Skillbird backend target port", FCVAR_PROTECTED);
 
-	RegConsoleCmd("rating", CommandRating);
+    RegConsoleCmd("rating", CommandRating);
 }
 
 public OnClientAuthorized(client, const String:auth[]){

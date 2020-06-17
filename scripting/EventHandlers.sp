@@ -20,10 +20,10 @@ public Action:Event_RoundEnd(Handle:event, const String:name[], bool:dontBroadca
 
 public Action:Event_PlayerDisconnect(Handle:event, const String:name[], bool:dontBroadcast){    
     SubmittEventActiveClients();
-	return Plugin_Continue;
+    return Plugin_Continue;
 }
 
 public Action:Event_PlayerChangedTeam(Handle:event, const String:name[], bool:dontBroadcast){
     SubmittEventActiveClients();
-	return Plugin_Continue;
+    return Plugin_Continue;
 }
