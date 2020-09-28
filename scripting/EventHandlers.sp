@@ -11,7 +11,7 @@ public Action:Event_RoundStart(Handle:event, const String:name[], bool:dontBroad
 }
 
 public Action:Event_RoundEnd(Handle:event, const String:name[], bool:dontBroadcast){
-    SubmittEventActiveClients();
+    SubmittEventActiveClients("round_winner");
     new team_id = GetEventInt(event, "winner");
     SubmittEventWinnerTeam(team_id);
     SubmittEventRoundEnd();
@@ -19,11 +19,11 @@ public Action:Event_RoundEnd(Handle:event, const String:name[], bool:dontBroadca
 }
 
 public Action:Event_PlayerDisconnect(Handle:event, const String:name[], bool:dontBroadcast){    
-    SubmittEventActiveClients();
+    SubmittEventActiveClients("disconnect");
     return Plugin_Continue;
 }
 
 public Action:Event_PlayerChangedTeam(Handle:event, const String:name[], bool:dontBroadcast){
-    SubmittEventActiveClients();
+    SubmittEventActiveClients("change_team");
     return Plugin_Continue;
 }
