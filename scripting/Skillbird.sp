@@ -28,6 +28,7 @@ public OnPluginStart(){
 
     /* Hook Events */
     HookEvent("round_end", Event_RoundEnd);    
+    HookEvent("round_start", Event_RoundStart);
     HookEvent("player_team", Event_PlayerChangedTeam);    
     HookEvent("player_disconnect", Event_PlayerDisconnect);    
 
