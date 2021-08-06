@@ -51,7 +51,7 @@ In the Server console (or via rcon). It is normal for the console to be laggy.
     sm plugins load Skillbird
 
 # Why include system2 as binaries?
-Because I'm a lazy cheat. I don't it's against the GPL as long as I tell you the source-code is [here](https://github.com/dordnung/System2).
+Because I'm a lazy cheat. It's not against the GPL as long as I tell you the source-code is [here](https://github.com/dordnung/System2). Building sourcemod extensions can be complicated for the uninitiated.
 
 # Why do you have the json dependency in your repro
-Because I'm a lazy cheat, please leave [this guy](https://github.com/clugg/sm-json/) a star.
+Because I'm a lazy cheat and there is no dependency manager for sourcemod, please leave [this guy](https://github.com/clugg/sm-json/) a star.
